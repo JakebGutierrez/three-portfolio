@@ -1,0 +1,59 @@
+@import url('https://rsms.me/inter/inter.css');
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overscroll-behavior: none;
+  background: #151515;
+  color: #a0a0a0;
+  font-family: 'Inter var', sans-serif;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: 0.05em; 
+  line-height: 1.2em;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  pointer-events: all;
+  color: #a0a0a0;
+  text-decoration: none;
+}
+
+svg {
+  fill: #a0a0a0;
+}
+
+
+#canvasContainer {
+  width: 60%;
+  float: left;
+  overflow: hidden;  /* this ensures the canvas does not spill over its container */
+  height: 100vh; /* You can adjust this value based on your requirement */
+  display: flex;
+  align-items: center; /* vertically center the canvas */
+  justify-content: center; /* horizontally center the canvas */
+}
+
+#textContent {
+  width: 40%;
+  float: left;
+  height: 100%;
+  padding: 40px;
+  box-sizing: border-box;  /* ensures padding is included in the width */
+}

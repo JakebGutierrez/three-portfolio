@@ -1,17 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { createRoot } from 'react-dom/client'
+import { Suspense } from 'react'
+import './styles.css'
+import { App } from './App'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+function Overlay() {
+  return (
+    <div style={{ position: 'absolute', top: 0, left: 0, pointerEvents: 'none', width: '100%', height: '100%' }}>
+      <a href="https://github.com/your_username" target="_blank" rel="noopener noreferrer" style={{ position: 'absolute', bottom: 40, right: 85 }}>
+        <img src="/path_to_github_icon.svg" alt="GitHub" width="20" />
+      </a>
+      <a href="mailto:your_email@example.com" style={{ position: 'absolute', bottom: 40, right: 200 }}>
+        <img src="/path_to_email_icon.svg" alt="Email" width="20" />
+      </a>
+      <a href="linkedin.com" style={{ position: 'absolute', bottom: 40, right: 300 }}>
+        <img src="/path_to_linkedin_icon.svg" alt="Linkedin" width="20" />
+      </a>
+    </div>
+  );
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+
+createRoot(document.getElementById('root')).render(
+  <>
+    <Suspense fallback={null}>
+      <App />
+    </Suspense>
+    <Overlay />
+  </>
+)
