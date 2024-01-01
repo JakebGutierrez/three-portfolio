@@ -6,21 +6,22 @@ import { App } from './App'
 function Overlay() {
   return (
     <div style={{ position: 'absolute', top: 0, left: 0, pointerEvents: 'none', width: '100%', height: '100%' }}>
-      <a target="_blank" rel="noopener noreferrer" style={{ position: 'absolute', bottom: 40, right: 415 }}>
-        <img src="/path_to_github_icon.svg" alt="About" width="20" />
+      <a target="_blank" rel="noopener noreferrer" className="icon" style={{ position: 'absolute', bottom: 40, right: 415 }}>
+        <img src="/about_icon.svg" alt="About" width="20" />
       </a>
-      <a href="https://github.com/your_username" target="_blank" rel="noopener noreferrer" style={{ position: 'absolute', bottom: 40, right: 85 }}>
-        <img src="/path_to_github_icon.svg" alt="GitHub" width="20" />
+      <a href="https://github.com/JakebGutierrez" target="_blank" rel="noopener noreferrer" className="icon" style={{ position: 'absolute', bottom: 40, right: 85 }}>
+        <img src="/github_icon.svg" alt="GitHub" width="20" />
       </a>
-      <a href="mailto:your_email@example.com" style={{ position: 'absolute', bottom: 40, right: 200 }}>
-        <img src="/path_to_email_icon.svg" alt="Email" width="20" />
+      <a href="mailto:mail@jakebgutierrez.com" className="icon" style={{ position: 'absolute', bottom: 40, right: 200 }}>
+        <img src="/mail_icon.svg" alt="Email" width="20" />
       </a>
-      <a href="linkedin.com" style={{ position: 'absolute', bottom: 40, right: 300 }}>
-        <img src="/path_to_linkedin_icon.svg" alt="Linkedin" width="20" />
+      <a href="https://www.linkedin.com/in/jakeb-gutierrez/" target="_blank" rel="noopener noreferrer" className="icon" style={{ position: 'absolute', bottom: 40, right: 300 }}>
+        <img src="/linkedin_icon.svg" alt="Linkedin" width="20" />
       </a>
     </div>
   );
 }
+
 
 
 
