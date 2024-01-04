@@ -12,17 +12,17 @@ const geometry = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0, 
 
 
 const imageDescriptions = [
-  "Description for Image 1",
-  "Description for Image 2",
-  "Description for Image 3",
-  "Description for Image 4",
-  "Description for Image 5"
+  "MTG topster info, why and how i built it, source code",
+  "pokemon team builder info, why and how i built it, source code",
+  "underwater game info, why and how i built it, source code",
+  // "Description for Image 4",
+  // "Description for Image 5"
 ];
 
 
 const state = proxy({
   clicked: null,
-  items: [1, 2, 3, 4, 5].map((u, index) => ({ url: `/${u}.jpg`, description: imageDescriptions[index] })),
+  items: [1, 2, 3].map((u, index) => ({ url: `/${u}.jpg`, description: imageDescriptions[index] })),
   currentText: "Hello world, my name is Jakeb, I do so and so, you can learn more about my projects by clicking on the images, below is an about me, you can return to this text by clicking on my name in the header or minimising an image", // Default text
 });
 
@@ -105,7 +105,8 @@ export const App = () => {
         </Canvas>
       </div>
       <div id="textContent">
-        <h1>ジェイケブ</h1>
+        {/* <h1>ジェイケブ</h1> */}
+        <h1>Jakeb Gutierrez</h1>
         <p></p>
         <div>
           {snap.currentText}
