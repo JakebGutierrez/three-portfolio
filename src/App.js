@@ -23,7 +23,7 @@ const imageDescriptions = [
 const state = proxy({
   clicked: null,
   items: [1, 2, 3, 4, 5].map((u, index) => ({ url: `/${u}.jpg`, description: imageDescriptions[index] })),
-  currentText: "Hello world, my name is Jakeb, I do so and so, you can learn more about my projects by clicking on the images", // Default text
+  currentText: "Hello world, my name is Jakeb, I do so and so, you can learn more about my projects by clicking on the images, below is an about me, you can return to this text by clicking on my name in the header or minimising an image", // Default text
 });
 
 
@@ -57,7 +57,7 @@ function Item({ index, position, scale, c = new THREE.Color(), ...props }) {
   const click = () => {
     if (state.clicked === index) {
       state.clicked = null;
-      state.currentText = "Hello world, my name is Jakeb, I do so and so, you can learn more about my projects by clicking on the images"; // Reset to default text
+      state.currentText = "Hello world, my name is Jakeb, I do so and so, you can learn more about my projects by clicking on the images, below is an about me, you can return to this text by clicking on my name in the header or minimising an image"; // Reset to default text
     } else {
       state.clicked = index;
       state.currentText = items[index].description;
