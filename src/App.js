@@ -12,12 +12,13 @@ const geometry = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0, 
 
 
 const imageDescriptions = [
-  "MTG topster info, why and how i built it, source code",
-  "pokemon team builder info, why and how i built it, source code",
-  "underwater game info, why and how i built it, source code",
+  "MTG topster info, why and how I built it. Source/Demo: https://mtgchart.netlify.app/",
+  "Web MPC info, why and how I built it. Source/Demo: [URL here]",
+  "Tune Sort info, why and how I built it. Source/Demo: [URL here]",
   // "Description for Image 4",
   // "Description for Image 5"
 ];
+
 
 
 const state = proxy({
@@ -93,6 +94,17 @@ function Items({ w = 1.5, gap = 0.15 }) {
   );
 }
 
+function convertTextToLinks(text) {
+  const urlRegex = /(https?:\/\/[^\s]+)/g;
+  return text.split(urlRegex).map((part, index) => {
+    if (part.match(urlRegex)) {
+      return <a key={index} href={part} target="_blank" rel="noopener noreferrer">{part}</a>;
+    } else {
+      return part;
+    }
+  });
+}
+
 
 export const App = () => {
   const snap = useSnapshot(state);
@@ -109,7 +121,7 @@ export const App = () => {
         <h1>Jakeb Gutierrez</h1>
         <p></p>
         <div>
-          {snap.currentText}
+        {convertTextToLinks(snap.currentText)}
         </div>
       </div>
     </div>
