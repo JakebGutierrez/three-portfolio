@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'; // Add useRef here
+import React, { useState, useRef } from 'react'; // Add useRef here
 import * as THREE from 'three';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Image, ScrollControls, Scroll, useScroll } from '@react-three/drei';
@@ -12,14 +12,11 @@ const geometry = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0, 
 
 
 const imageDescriptions = [
-  "MTG topster info, why and how I built it. Source/Demo: https://mtgchart.netlify.app/",
-  "Web MPC info, why and how I built it. Source/Demo: [URL here]",
-  "Tune Sort info, why and how I built it. Source/Demo: [URL here]",
-  // "Description for Image 4",
-  // "Description for Image 5"
+  { text: "MTG topster info, why and how I built it, ", sourceUrl: "https://github.com/JakebGutierrez/mtg-chart", demoUrl: "https://mtgchart.netlify.app/" },
+  { text: "web mpc info, why and how I built it, ", sourceUrl: "https://github.com/JakebGutierrez/web-mpc", demoUrl: "https://webmpc.netlify.app/" },
+  { text: "tune sort info, why and how I built it, ", sourceUrl: "https://github.com/JakebGutierrez/tune-sort", demoUrl: "https://tunesort.netlify.app/" },
+  // ...
 ];
-
-
 
 const state = proxy({
   clicked: null,
@@ -94,16 +91,17 @@ function Items({ w = 1.5, gap = 0.15 }) {
   );
 }
 
-function convertTextToLinks(text) {
-  const urlRegex = /(https?:\/\/[^\s]+)/g;
-  return text.split(urlRegex).map((part, index) => {
-    if (part.match(urlRegex)) {
-      return <a key={index} href={part} target="_blank" rel="noopener noreferrer">{part}</a>;
-    } else {
-      return part;
-    }
-  });
+function DescriptionWithLink({ description }) {
+  return (
+    <p>
+      {description.text}
+      <a href={description.sourceUrl} target="_blank" rel="noopener noreferrer">source</a> / 
+      <a href={description.demoUrl} target="_blank" rel="noopener noreferrer">demo</a>
+    </p>
+  );
 }
+
+
 
 
 export const App = () => {
@@ -117,11 +115,12 @@ export const App = () => {
         </Canvas>
       </div>
       <div id="textContent">
-        {/* <h1>ジェイケブ</h1> */}
         <h1>Jakeb Gutierrez</h1>
-        <p></p>
         <div>
-        {convertTextToLinks(snap.currentText)}
+          {snap.clicked !== null 
+            ? <DescriptionWithLink description={imageDescriptions[snap.clicked]} />
+            : <p>{snap.currentText}</p>
+          }
         </div>
       </div>
     </div>
