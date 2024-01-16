@@ -23,7 +23,7 @@ body {
 h1 {
   font-size: 3rem;
   font-weight: 400;
-  letter-spacing: 0.05em; 
+  letter-spacing: 0.05em;
   line-height: 1.2em;
   margin: 0;
   padding: 0;
@@ -42,7 +42,7 @@ a svg {
 #canvasContainer {
   width: 60%;
   float: left;
-  overflow: hidden;  /* this ensures the canvas does not spill over its container */
+  overflow: hidden; /* this ensures the canvas does not spill over its container */
   height: 100vh; /* You can adjust this value based on your requirement */
   display: flex;
   align-items: center; /* vertically center the canvas */
@@ -54,5 +54,5 @@ a svg {
   float: left;
   height: 100%;
   padding: 40px;
-  box-sizing: border-box;  /* ensures padding is included in the width */
+  box-sizing: border-box; /* ensures padding is included in the width */
 }

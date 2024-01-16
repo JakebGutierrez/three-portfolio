@@ -1,18 +1,18 @@
-import { createRoot } from "react-dom/client";
-import { Suspense } from "react";
-import "./styles.css";
-import { App } from "./App";
+import { createRoot } from 'react-dom/client';
+import { Suspense } from 'react';
+import './styles.css';
+import { App } from './App';
 
 function Overlay() {
   return (
     <div
       style={{
-        position: "absolute",
+        position: 'absolute',
         top: 0,
         left: 0,
-        pointerEvents: "none",
-        width: "100%",
-        height: "100%",
+        pointerEvents: 'none',
+        width: '100%',
+        height: '100%',
       }}
     >
       <a
@@ -20,14 +20,14 @@ function Overlay() {
         target="_blank"
         rel="noopener noreferrer"
         className="icon"
-        style={{ position: "absolute", bottom: 40, right: 150 }}
+        style={{ position: 'absolute', bottom: 40, right: 150 }}
       >
         <img src="/assets/github.svg" alt="Github" width="20" />
       </a>
       <a
         href="mailto:mail@jakebgutierrez.com"
         className="icon"
-        style={{ position: "absolute", bottom: 40, right: 260 }}
+        style={{ position: 'absolute', bottom: 40, right: 260 }}
       >
         <img src="/assets/email.svg" alt="Email" width="20" />
       </a>
@@ -36,7 +36,7 @@ function Overlay() {
         target="_blank"
         rel="noopener noreferrer"
         className="icon"
-        style={{ position: "absolute", bottom: 40, right: 370 }}
+        style={{ position: 'absolute', bottom: 40, right: 370 }}
       >
         <img src="/assets/linkedin.svg" alt="Linkedin" width="20" />
       </a>
@@ -44,11 +44,11 @@ function Overlay() {
   );
 }
 
-createRoot(document.getElementById("root")).render(
+createRoot(document.getElementById('root')).render(
   <>
     <Suspense fallback={null}>
       <App />
     </Suspense>
     <Overlay />
-  </>
+  </>,
 );
