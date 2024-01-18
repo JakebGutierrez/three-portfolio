@@ -6,62 +6,13 @@ import { proxy, useSnapshot } from 'valtio';
 import { easing } from 'maath';
 import './App.css';
 import PropTypes from 'prop-types';
+import { imageDescriptions, DEFAULT_TEXT } from './Descriptions';
 
 const material = new THREE.LineBasicMaterial({ color: 'white' });
 const geometry = new THREE.BufferGeometry().setFromPoints([
   new THREE.Vector3(0, -0.5, 0),
   new THREE.Vector3(0, 0.5, 0),
 ]);
-
-const imageDescriptions = [
-  {
-    text: `
-      <h2>MTGChart: A Visual Deck Builder Web Application</h2>
-      <h3>Revolutionizing MTG Deck Visualization</h3>
-      <p>A web application designed to transform how Magic: The Gathering players visualize and build their decks.</p>
-      <p><strong>Key Features:</strong></p>
-      <ul>
-        <li>Interactive deck building interface</li>
-        <li>Real-time Scryfall API integration for card data</li>
-        <li>User-friendly card search and organization</li>
-      </ul>
-      <p><em>Developed using modern web technologies like React.js, Node.js, and Axios.</em></p>
-      <p>
-  Feel free to explore the 
-  <a href='https://github.com/JakebGutierrez/mtg-chart' target='_blank' rel='noopener noreferrer' className='link-text'>
-    Source Code
-  </a>&nbsp;or check out the&nbsp;
-  <a href='https://mtgchart.netlify.app/' target='_blank' rel='noopener noreferrer' className='link-text'>
-    Live Demo
-  </a>.
-</p>
-    `,
-  },
-  {
-    text: 'web mpc info, why and how I built it, ',
-    sourceUrl: 'https://github.com/JakebGutierrez/web-beat',
-    demoUrl: 'https://webbeat.netlify.app/',
-  },
-  {
-    text: 'tune sort info, why and how I built it, ',
-    sourceUrl: 'https://github.com/JakebGutierrez/tune-sort',
-    demoUrl: 'https://tunesort.netlify.app/',
-  },
-];
-
-const DEFAULT_TEXT = `
-  <h2>Hello world! I'm Jakeb</h2>
-
-  <p>I like clean code and turning my weird app ideas into something tangible. I'm currently looking for job opportunities where I can make a difference.</p>
-  
-  <p>I've completed two internships in software engineering, where I learned a lot about tackling real-world tech challenges.</p>
-
-  <p>When I'm not programming, I enjoy listening to and making music, reading and pondering.</p>
-
-  <p>Check out my projects by clicking on their images. Each one showcases my skills and the story behind it. To return to this text, click on the image again.</p>
-
-  <p>If you're interested in what I do or have an exciting project in mind, feel free to contact me through the links below.</p>
-`;
 
 const state = proxy({
   clicked: null,
@@ -200,54 +151,13 @@ function Items({ w = 1.5, gap = 0.15 }) {
   );
 }
 
-// DescriptionWithLink.propTypes = {
-//   description: PropTypes.shape({
-//     text: PropTypes.string.isRequired,
-//     sourceUrl: PropTypes.string.isRequired,
-//     demoUrl: PropTypes.string.isRequired,
-//   }).isRequired,
-// };
-
-// function DescriptionWithLink({ description }) {
-//   const createMarkup = () => {
-//     return { __html: description.text };
-//   };
-
-//   return (
-//     <div>
-//       <div dangerouslySetInnerHTML={createMarkup()} />
-//       <p>
-//         <a
-//           href={description.sourceUrl}
-//           target="_blank"
-//           rel="noopener noreferrer"
-//           className="link-text"
-//         >
-//           Source Code
-//         </a>
-//         <span className="link-separator">/</span>
-//         <a
-//           href={description.demoUrl}
-//           target="_blank"
-//           rel="noopener noreferrer"
-//           className="link-text"
-//         >
-//           Live Demo
-//         </a>
-//       </p>
-//     </div>
-//   );
-// }
-
 export const App = () => {
   const snap = useSnapshot(state);
 
   return (
     <div>
       <div id="canvasContainer">
-        <Canvas
-        // ... Canvas configuration
-        >
+        <Canvas>
           <Items />
         </Canvas>
       </div>
