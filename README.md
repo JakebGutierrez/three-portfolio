@@ -63,9 +63,9 @@ Access the application at `http://localhost:3000`
 
 ## Planned Enhancements
 
-- **Interactive Gif Demonstrations**: Introduce gif animations to visually represent the functionalities and features of projects, providing a more engaging way for visitors to experience my portfolio.
+- [ ] **Interactive Gif Demonstrations**: Introduce gif animations to visually represent the functionalities and features of projects, providing a more engaging way for visitors to experience my portfolio.
 
-- **Optimised Mobile Experience**: Enhance mobile device support to ensure smooth and responsive animations, and a user-friendly interface on all screen sizes.
+- [x] **Optimised Mobile Experience**: Enhance mobile device support to ensure smooth and responsive animations, and a user-friendly interface on all screen sizes.
 
 ## Author
 
