@@ -47,3 +47,31 @@ p {
 p a {
   margin-right: -0.2em;
 }
+
+#textContent {
+  width: 40%;
+  float: left;
+  height: 100%;
+  padding: 40px;
+  box-sizing: border-box; /* ensures padding is included in the width */
+  overflow-y: auto; /* Adds vertical scroll */
+  max-height: calc(100vh - 80px); /* Adjusts the max height to fit the screen */
+}
+
+@media only screen and (max-width: 768px) {
+  /* Adjust the main container to stack children vertically */
+  .main-container {
+    flex-direction: column;
+  }
+
+  #canvasContainer,
+  #textContent {
+    width: 100%;
+    max-height: 45vh;
+    overflow-y: auto; /* Enable scrolling */
+  }
+
+  #textContent {
+    padding: 20px;
+  }
+}

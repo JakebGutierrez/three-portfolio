@@ -99,7 +99,7 @@ a svg {
   }
 
   .icon {
-    margin: 5px 10px; /* Vertical spacing for mobile */
+    margin: 5px 25px; /* Vertical spacing for mobile */
   }
 
   .icon img {

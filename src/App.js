@@ -155,7 +155,7 @@ export const App = () => {
   const snap = useSnapshot(state);
 
   return (
-    <div>
+    <div className="main-container" style={{ display: 'flex', height: '100%' }}>
       <div id="canvasContainer">
         <Canvas>
           <Items />
