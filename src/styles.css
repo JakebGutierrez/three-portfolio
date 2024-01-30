@@ -43,7 +43,7 @@ a svg {
   width: 60%;
   float: left;
   overflow: hidden; /* this ensures the canvas does not spill over its container */
-  height: 100vh; /* You can adjust this value based on your requirement */
+  height: 100vh;
   display: flex;
   align-items: center; /* vertically center the canvas */
   justify-content: center; /* horizontally center the canvas */
@@ -55,4 +55,54 @@ a svg {
   height: 100%;
   padding: 40px;
   box-sizing: border-box; /* ensures padding is included in the width */
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 20px;
+  right: 0; /* Aligns the footer to the right side */
+  left: 60%;
+  padding-right: 10px; /* Adds some padding on the right */
+}
+
+.icon {
+  margin: 0 50px; /* Increase space between icons */
+}
+
+.icon img {
+  width: 22px;
+  transition: transform 0.3s ease; /* Adds a smooth transition on hover */
+}
+
+.icon:hover img {
+  transform: scale(1.1); /* Slightly enlarges the icon on hover */
+}
+
+@media only screen and (max-width: 768px) {
+  #canvasContainer {
+    width: 100%;
+    height: 50vh;
+  }
+
+  #textContent {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .footer {
+    justify-content: center;
+    left: 0; /* Extend across the full width */
+    bottom: 10px; /* Adjust for mobile */
+  }
+
+  .icon {
+    margin: 5px 10px; /* Vertical spacing for mobile */
+  }
+
+  .icon img {
+    width: 20px; /* Revert to original size for mobile */
+  }
 }

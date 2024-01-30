@@ -5,40 +5,25 @@ import { App } from './App';
 
 function Overlay() {
   return (
-    <div
-      style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        pointerEvents: 'none',
-        width: '100%',
-        height: '100%',
-      }}
-    >
+    <div className="footer">
       <a
         href="https://github.com/JakebGutierrez"
         target="_blank"
         rel="noopener noreferrer"
         className="icon"
-        style={{ position: 'absolute', bottom: 40, right: 150 }}
       >
-        <img src="/assets/github.svg" alt="Github" width="20" />
+        <img src="/assets/github.svg" alt="Github" />
       </a>
-      <a
-        href="mailto:mail@jakebgutierrez.com"
-        className="icon"
-        style={{ position: 'absolute', bottom: 40, right: 260 }}
-      >
-        <img src="/assets/email.svg" alt="Email" width="20" />
+      <a href="mailto:mail@jakebgutierrez.com" className="icon">
+        <img src="/assets/email.svg" alt="Email" />
       </a>
       <a
         href="https://www.linkedin.com/in/jakeb-gutierrez/"
         target="_blank"
         rel="noopener noreferrer"
         className="icon"
-        style={{ position: 'absolute', bottom: 40, right: 370 }}
       >
-        <img src="/assets/linkedin.svg" alt="Linkedin" width="20" />
+        <img src="/assets/linkedin.svg" alt="Linkedin" />
       </a>
     </div>
   );
